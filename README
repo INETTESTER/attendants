@@ -1,5 +1,3 @@
 git fetch origin  # ดึงข้อมูลล่าสุดจาก remote repository
 git reset --hard origin/main  # รีเซ็ตให้เหมือนกับเวอร์ชันล่าสุดใน GitHub
 
-203.150.189.242
-xk6 build --with github.com/mostafa/xk6-throttle
