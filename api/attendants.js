@@ -1,0 +1,20 @@
+import http from 'k6/http';
+
+export function attendants() {
+    const url = 'https://attendants-uat.one.th/api/v1/clockin/in';
+    
+    const headers = {
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY3NGE1Y2M4YTVmZTI5NmQ2OWRkMmNhODkyYmJlNDg4YzFkMDBkMWE2YmI1ZDY2MDliNDJhNzUzMDllNDQxODJhNmJiZjI1NmQ1NzA3ZmE5In0.eyJhdWQiOiIyMDkiLCJqdGkiOiJmNzRhNWNjOGE1ZmUyOTZkNjlkZDJjYTg5MmJiZTQ4OGMxZDAwZDFhNmJiNWQ2NjA5YjQyYTc1MzA5ZTQ0MTgyYTZiYmYyNTZkNTcwN2ZhOSIsImlhdCI6MTc2NDU3ODk5MiwibmJmIjoxNzY0NTc4OTkyLCJleHAiOjE3NjQ1Nzk4OTIsInN1YiI6IjQwMzA0NzY1NjQ0OCIsInNjb3BlcyI6W119.rYVNLlgbrVTZO5Ks9VxcQ0o5fjD8XjUgWw4FpxensG0arPzYeXvfnWibX7aolo0HlUDt3BYBpj3nfheP8Vt_FmrPIe1LUv5uQ8CaWBjHyAylnzVsQRjjhsRB4GA0hEIkgAL5_J5obpulVwX_wOIlJ-p9Pjk9TBs8OjWqRWx7l3M-YCz_gmeMMBvpL6HJ-hFACS8DyOeD56uvwBgw4VbrThe_2XMiQLmWmQjntbiRbcBDH43ZPUyVq7QkAn04AP7L8xZVriw7tX_tlgh3_8Lk19D1Ccod0AXu3rjmeBUpHhwzBai5HdQJVlS5UnR8admjN2nEk5AwOf5QJloTQSNgFl2XIREb5tajsqhuNJLnLhzbKmpZszY6N4x95eziL5cml-GEkvDRxUMjtSkv_WW_JD248fJ-1_ykc9gU9bcBmrQnIJtjPAEETpPAeRGqF2-ghtrhRw0RX7pnDROjFid3Akpvov8zRsNIW5bO9D327PB5ab_ngywGKZPA9EZBtmyv_ykH7h2JwsoIOGeS7wjAbBenriBX_vcZKvpJbPC-pUYbKwgf9YtGL-mKHAJjCW7GnuES0PqmL2o8OX3nL8i0MZWXgjP35_YcQD2NvIP0-iaIYeBuVmfRn25j1QUIuefOt5na7P0D0KdZ7AJFsfKzFlL6uy0GIkuznXGftxIZHMI',
+    };
+
+    const payload = {
+        latitude: "13.748826583624504",
+        longitude: "100.56660423003818"
+    };
+
+    const response = http.post(url, payload, { headers });
+
+    //console.log('Response body:', response.body);
+
+    return response;
+}

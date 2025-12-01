@@ -6,13 +6,15 @@ import { scenario } from 'k6/execution';
 import { ran } from '../api/script.js';
 import { callback_scb } from '../api/getJson.js';
 import { htmlReport } from 'https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js';
+import { attendants } from '../api/attendants.js';
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = ran()
+  //response = ran()
   //response = callback_scb(scenario)
+  response = attendants()
 
 
   error_check(response);
