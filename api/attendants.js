@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { token } from './env.jss';
+import { token } from './env.js';
 
 export function attendants() {
     const url = 'https://attendants-uat.one.th/api/v1/clockin/in';
