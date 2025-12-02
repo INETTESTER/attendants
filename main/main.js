@@ -6,13 +6,14 @@ import { scenario } from 'k6/execution';
 import { ran } from '../api/script.js';
 import { callback_scb } from '../api/getJson.js';
 import { attendants } from '../api/attendants.js';
+import { attendants_frontend } from '../api/attendants_frontend.js';
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = attendants()
-
+  //response = attendants()
+  response = attendants_frontend()
 
   error_check(response);
   sleep(1)
